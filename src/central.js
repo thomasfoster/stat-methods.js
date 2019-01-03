@@ -59,6 +59,22 @@ export function geometricMean(arr) {
 }
 
 /**
+ * Return the root mean square of a numeric data array.
+ * The root mean square is the square root of the
+ * mean square (the arithmetic mean of the squares of a set of numbers).
+ * @param {Number[]} arr the data array
+ * @returns {Number} the arithmetic mean of the data array
+ */
+export function rootMeanSquare(arr) {
+  if (min(arr) === undefined) return undefined;
+  let arrSquareSum = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    arrSquareSum += arr[i] ** 2;
+  }
+  return Math.sqrt((arrSquareSum / arr.length));
+}
+
+/**
  * Return the median (middle value) of a numeric data array.
  * The median is the value separating the higher half from the lower half of a data sample.
  * If there is an odd number of observations, the middle one is picked.

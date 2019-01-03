@@ -21,6 +21,7 @@ npm i stat-methods
     -   [mean](#mean)
     -   [harmonicMean](#harmonicMean)
     -   [geometricMean](#geometricMean)
+    -   [rootMeanSquare](#rootMeanSquare)
     -   [median](#median)
     -   [medianLow](#medianLow)
     -   [medianHigh](#medianHigh)
@@ -52,6 +53,7 @@ These methods compute an average or typical value from a population or sample.
 -   [mean](#mean): Arithmetic mean ('average')
 -   [harmonicMean](#harmonicMean): Harmonic mean ('subcontrary mean')
 -   [geometricMean](#geometricMean): Geometric mean
+-   [rootMeanSquare](#rootMeanSquare): Root mean square
 -   [median](#median): Median (middle value)
 -   [medianLow](#medianLow): Low median
 -   [medianHigh](#medianHigh): High median
@@ -134,6 +136,26 @@ geometricMean([1, -2, 3, 4]); // -> undefined
 ```
 
 If the data array is empty or contains a non finite `Number`, the method returns `undefined`.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#### rootMeanSquare
+
+```js
+rootMeanSquare(arr);
+```
+
+Return the root mean square of a numeric data array `arr`.
+
+The root mean square is the square root of the mean square (the arithmetic mean of the squares of a set of numbers).
+
+```js
+rootMeanSquare([4, 1, 1/32]); // -> 2.380544514916703
+```
+
+If the data array is empty or contains a non finite `Number`, the method returns `undefined`.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #### median
 

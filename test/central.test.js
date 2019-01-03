@@ -3,6 +3,7 @@ import {
   mean,
   harmonicMean,
   geometricMean,
+  rootMeanSquare,
   median,
   medianLow,
   medianHigh,
@@ -50,6 +51,22 @@ describe('Averages and measures of central location', () => {
     expect(geometricMean(3)).toBeUndefined();
     expect(geometricMean([3])).toBe(3);
     testUndefinedWithNullable(geometricMean);
+  });
+
+  test('Root mean square', () => {
+    expect(rootMeanSquare([4, 1, 1, 3])).toBe(2.598076211353316);
+    expect(rootMeanSquare([1, 2, 4])).toBe(2.6457513110645907);
+    expect(rootMeanSquare([4, 1, 1/32])).toBe(2.380544514916703);
+    expect(rootMeanSquare([1.1, 1.4, 3.5, 9.5])).toBe(5.139795715784821);
+    expect(rootMeanSquare([2.5, 0, 10])).toBe(5.951190357119041);
+    expect(rootMeanSquare([-1, 2, 4])).toBe(2.6457513110645907);
+    expect(rootMeanSquare([-1, 2, 4, 2])).toBe(2.5);
+    expect(rootMeanSquare(['a', 2.5, 'b', 5.75])).toBeUndefined();
+    expect(rootMeanSquare([NaN, 2.5, 3, 5.75])).toBeUndefined();
+    expect(rootMeanSquare([])).toBeUndefined();
+    expect(rootMeanSquare(3)).toBeUndefined();
+    expect(rootMeanSquare([3])).toBe(3);
+    testUndefinedWithNullable(rootMeanSquare);
   });
 
   test('Median', () => {
