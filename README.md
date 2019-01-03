@@ -34,6 +34,7 @@ npm i stat-methods
     -   [pStdev](#pStdev)
     -   [variance](#variance)
     -   [stdev](#stdev)
+    -   [medAbsdev](#medAbsdev)
     -   [range](#range)
 
 3.  [Descriptive statistics](#Descriptive-statistics)
@@ -332,6 +333,7 @@ These methods compute a measure of the variability in a sample or population, ho
 -   [pStdev](#pStdev): Population standard deviation
 -   [variance](#variance): Sample variance
 -   [stdev](#stdev): Sample standard deviation
+-   [medAbsdev](#medAbsdev): Median absolute deviation
 -   [range](#range): Range
 
 #### pVariance
@@ -429,6 +431,22 @@ stdev([1, 2, 3, 4, 5], xBar); // -> 1.5811388300841898
 ```
 
 Please refer to the [variance](#variance) method for further details.
+
+#### medAbsdev
+
+```js
+medAbsdev(arr);
+```
+
+Return the median absolute deviation of a numeric data array `arr`.
+
+The median absolute deviation is the median of the absolute deviations from a data sample's median.
+
+```js
+medAbsdev([1, 2, 3, 4, 5]); // -> 1
+```
+
+If the data array is empty or contains a non finite `Number`, the method returns `undefined`.
 
 #### range
 

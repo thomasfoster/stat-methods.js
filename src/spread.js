@@ -1,4 +1,8 @@
-import { mean } from './central';
+import {
+  mean,
+  median,
+} from './central';
+
 import {
   min,
   max,
@@ -82,6 +86,24 @@ export function stdev(arr, xBar) {
 }
 
 /**
+ * Return the median absolute deviation of a numeric data array.
+ * The median absolute deviation is the median of the absolute deviations
+ * from a data sample's median.
+ * @param {Number[]} arr the data array
+ * @returns {Number} the median absolute deviation of the data array
+ */
+export function medAbsdev(arr) {
+  const med = median(arr);
+  const absoluteDeviationArr = [];
+  if (med === undefined) return undefined;
+  for (let i = 0; i < arr.length; i += 1) {
+    const absdev = Math.abs(arr[i] - med);
+    absoluteDeviationArr.push(absdev);
+  }
+  return median(absoluteDeviationArr);
+}
+
+/**
  * Return the range of a numeric data array.
  * The range of a set of data is the difference between the largest and smallest values.
  * @param {Number[]} arr the data array
@@ -99,5 +121,6 @@ export default {
   pStdev,
   variance,
   stdev,
+  medAbsdev,
   range,
 };

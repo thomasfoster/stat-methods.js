@@ -4,6 +4,7 @@ import {
   pStdev,
   variance,
   stdev,
+  medAbsdev,
   range,
 } from '../src/spread';
 
@@ -51,6 +52,19 @@ describe('Measures of spread', () => {
     expect(stdev(3)).toBeUndefined();
     expect(stdev([3])).toBeUndefined();
     testUndefinedWithNullable(stdev);
+  });
+
+  test('Median Absolute Deviation', () => {
+    expect(medAbsdev([1, 12, 3, 15, 6, 8, 9])).toBe(4);
+    expect(medAbsdev([1, -2, 3, 4, 8, 6, 5, 9])).toBe(2.5);
+    expect(medAbsdev([1, 2, 3, 4, 5])).toBe(1);
+    expect(medAbsdev([1, 2, 3, 4, 5, 6])).toBe(1.5);
+    expect(medAbsdev(['a', 2.5, 'b', 5.75])).toBeUndefined();
+    expect(medAbsdev([NaN, 2.5, 3, 5.75])).toBeUndefined();
+    expect(medAbsdev([])).toBeUndefined();
+    expect(medAbsdev(3)).toBeUndefined();
+    expect(medAbsdev([3])).toBe(0);
+    testUndefinedWithNullable(medAbsdev);
   });
 
   test('Range', () => {
