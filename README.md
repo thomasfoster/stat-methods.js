@@ -137,8 +137,6 @@ geometricMean([1, -2, 3, 4]); // -> undefined
 
 If the data array is empty or contains a non finite `Number`, the method returns `undefined`.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #### rootMeanSquare
 
 ```js
@@ -154,8 +152,6 @@ rootMeanSquare([4, 1, 1/32]); // -> 2.380544514916703
 ```
 
 If the data array is empty or contains a non finite `Number`, the method returns `undefined`.
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #### median
 
